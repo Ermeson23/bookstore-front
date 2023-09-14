@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="title">
+    <h1>LIVROS</h1>
+  </div>
+
+  <button class="button-add mat-elevation-z8" mat-stroked-button color="warn" (click)="navigateToBookCreate()">NOVO LIVRO</button>
+
+  <mat-table aria-describedby="infoCategory" [dataSource]="books" mat-table class="mat-elevation-z8">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Título </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.title }} </mat-cell>
+    </ng-container>
+
+    <!-- Reading Column -->
+    <ng-container matColumnDef="books">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Ler Livro </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let row">
+        <button mat-icon-button routerLink="{{ row.id }}/read" aria-label="Ler o conteúdo do livro">
+          <mat-icon class="books">book</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="action-column" >
+        Ações
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let row" class="action-column">
+        <button mat-icon-button color="primary" routerLink="{{ row.id }}/update" aria-label="Editar Curso" href="#">
+          <mat-icon class="edit actions">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" routerLink="{{ row.id }}/delete" aria-label="Remover Curso" href="#">
+          <mat-icon class="actions">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div>
