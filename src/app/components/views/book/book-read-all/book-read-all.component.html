@@ -7,12 +7,6 @@
 
   <mat-table aria-describedby="infoCategory" [dataSource]="books" mat-table class="mat-elevation-z8">
 
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <mat-header-cell mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-      <mat-cell mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
-    </ng-container>
-
     <!-- Title Column -->
     <ng-container matColumnDef="title">
       <mat-header-cell mat-header-cell *matHeaderCellDef> Título </mat-header-cell>

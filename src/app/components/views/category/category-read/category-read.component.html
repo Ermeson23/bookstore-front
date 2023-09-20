@@ -5,13 +5,7 @@
 
   <button class="button-add mat-elevation-z8" mat-stroked-button color="warn" (click)="navigateToCategoryCreate()">NOVA CATEGORIA</button>
 
-  <mat-table aria-describedby="infoCategory" mat-table class="mat-elevation-z8" [dataSource]="categories">
-
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <mat-header-cell mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-      <mat-cell mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
-    </ng-container>
+  <mat-table aria-describedby="infoCategory" class="mat-elevation-z8" [dataSource]="categories">
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bookstore-front": {
+      "hosting": {
+        "bookstore-front": [
+          "bookstore-front"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bookstore-front"
+  }
+}

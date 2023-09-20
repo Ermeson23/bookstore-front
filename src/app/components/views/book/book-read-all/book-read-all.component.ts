@@ -10,7 +10,7 @@ import { BookService } from 'src/app/components/services/book/book.service';
   styleUrls: ['./book-read-all.component.scss'],
 })
 export class BookReadAllComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'title', 'books', 'actions'];
+  displayedColumns: string[] = ['title', 'books', 'actions'];
 
   id_cat: string = '';
 
