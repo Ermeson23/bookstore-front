@@ -4,13 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from "src/app/app-routing.module";
 import { AppMaterialModule } from "src/app/shared/app-material/app-material.module";
 import { BookReadAllComponent } from "./book-read-all/book-read-all.component";
 import { BookCreateComponent } from './book-create/book-create.component';
 import { BookUpdateComponent } from './book-update/book-update.component';
 import { BookDeleteComponent } from './book-delete/book-delete.component';
 import { BookReadComponent } from './book-read/book-read.component';
+import { BookRoutingModule } from "./book.routing.module";
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { BookReadComponent } from './book-read/book-read.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    BookRoutingModule
   ],
   exports: [],
   declarations: [

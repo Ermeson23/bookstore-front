@@ -9,7 +9,7 @@ import { CategoryCreateComponent } from "./category-create/category-create.compo
 import { CategoryReadComponent } from "./category-read/category-read.component";
 import { CategoryDeleteComponent } from "./category-delete/category-delete.component";
 import { CategoryUpdateComponent } from "./category-update/category-update.component";
-import { AppRoutingModule } from "src/app/app-routing.module";
+import { CategoryRoutingModule } from "./category.routing.module";
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { AppRoutingModule } from "src/app/app-routing.module";
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    CategoryRoutingModule
   ],
   exports: [],
   declarations: [
