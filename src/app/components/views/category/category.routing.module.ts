@@ -7,10 +7,11 @@ import { CategoryDeleteComponent } from './category-delete/category-delete.compo
 import { CategoryUpdateComponent } from './category-update/category-update.component';
 
 const categoryRoutes: Routes = [
-  { path: 'category', component: CategoryReadComponent },
-  { path: 'category/create', component: CategoryCreateComponent },
-  { path: 'category/delete/:id', component: CategoryDeleteComponent },
-  { path: 'category/update/:id', component: CategoryUpdateComponent },
+  { path: 'category', component: CategoryReadComponent, children: [
+    { path: 'create', component: CategoryCreateComponent },
+    { path: 'delete/:id', component: CategoryDeleteComponent },
+    { path: 'update/:id', component: CategoryUpdateComponent },
+  ]},
 ];
 
 @NgModule({
