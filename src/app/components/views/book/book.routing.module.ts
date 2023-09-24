@@ -6,13 +6,14 @@ import { BookCreateComponent } from './book-create/book-create.component';
 import { BookUpdateComponent } from './book-update/book-update.component';
 import { BookDeleteComponent } from './book-delete/book-delete.component';
 import { BookReadComponent } from './book-read/book-read.component';
+import { RootGuard } from '../../guards/root.guard';
 
 const bookRoutes: Routes = [
-  { path: 'category/:id_cat/books', component: BookReadAllComponent },
-  { path: 'category/:id_cat/books/create', component: BookCreateComponent },
-  { path: 'category/:id_cat/books/:id/update', component: BookUpdateComponent },
-  { path: 'category/:id_cat/books/:id/delete', component: BookDeleteComponent },
-  { path: 'category/:id_cat/books/:id/read', component: BookReadComponent }
+  { path: '', component: BookReadAllComponent },
+  { path: 'create', component: BookCreateComponent, canActivate: [RootGuard] },
+  { path: ':id/update', component: BookUpdateComponent, canActivate: [RootGuard] },
+  { path: ':id/delete', component: BookDeleteComponent, canActivate: [RootGuard] },
+  { path: ':id/read', component: BookReadComponent }
 ];
 
 @NgModule({

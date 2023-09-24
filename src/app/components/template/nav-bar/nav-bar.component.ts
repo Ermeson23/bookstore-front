@@ -1,15 +1,25 @@
+import { AuthService } from './../../services/login/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
+  showMenu: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.authService.showMenuEmitter.subscribe(
+      (show) => (this.showMenu = show)
+    );
+
+    this.logout();
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }

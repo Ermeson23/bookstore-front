@@ -1,0 +1,18 @@
+<form>
+  <h1>LOGIN</h1>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>USUÁRIO: </mat-label>
+    <input matInput type="text" name="user" [(ngModel)]="_user.name" placeholder="usuario01@gmail.com">
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>SENHA: </mat-label>
+    <input class="input-pass" matInput [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="_user.password" placeholder="Insira a senha cadastrada">
+    <mat-icon (click)="togglePasswordVisibility()" matSuffix>visibility</mat-icon>
+  </mat-form-field>
+
+  <div class="buttons">
+    <button (click)="login()" class="button-add mat-elevation-z8" mat-stroked-button color="primary">Login <i class="material-icons">send</i></button>
+  </div>
+</form>

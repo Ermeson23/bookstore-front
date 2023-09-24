@@ -11,8 +11,9 @@ import { FootComponent } from './components/template/foot/foot.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { HomeComponent } from './components/views/home/home/home.component';
 import { NavBarComponent } from './components/template/nav-bar/nav-bar.component';
-import { BookModule } from './components/views/book/book.module';
-import { CategoryModule } from './components/views/category/category.module';
+import { LoginComponent } from './components/views/login/login.component';
+import { AuthService } from './components/services/login/auth.service';
+import { AuthGuard } from './components/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CategoryModule } from './components/views/category/category.module';
     FootComponent,
     NavBarComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,12 +30,10 @@ import { CategoryModule } from './components/views/category/category.module';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CategoryModule,
-    BookModule,
     AppMaterialModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
