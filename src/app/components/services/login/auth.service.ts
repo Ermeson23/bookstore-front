@@ -20,7 +20,7 @@ export class AuthService {
   constructor(private router: Router, private matSnackBar: MatSnackBar) {}
 
   login(user: User) {
-    if (user.name === 'usuario@email.com' && user.password === '12345') {
+    if (user.name === 'usuario@email.com' && user.password === '123456') {
       this.authenticatedUser = true;
       this.userRole = 'user';
       this.showMenuEmitter.emit(true);

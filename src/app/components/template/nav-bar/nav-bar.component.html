@@ -1,5 +1,7 @@
 <mat-sidenav-container class="container">
-  <mat-sidenav mode="side" opened>
+  <mat-sidenav #drawer class="sidenav"
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false ">
     <mat-nav-list>
       <a routerLink="" mat-list-item>
         <i class="material-icons">home</i>
@@ -20,6 +22,9 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
