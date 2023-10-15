@@ -44,8 +44,6 @@ export class AuthService {
 
         this.setUserRole(registeredUser.userRole);
 
-        console.log(this.getUserRole());
-
         this.authenticatedUser = true;
         this.showMenuEmitter.emit(true);
         this.router.navigate(['/']);

@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   login() {
     this._user.userRole = this.authService.getUserRole();
     this.authService.login(this.user);
-    console.log(this.user);
   }
 
 }
