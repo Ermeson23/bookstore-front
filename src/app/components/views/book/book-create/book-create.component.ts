@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Book } from 'src/app/components/model/book';
@@ -19,22 +18,6 @@ export class BookCreateComponent implements OnInit {
     authorName: '',
     text: '',
   };
-
-  title = new FormControl('', [
-    Validators.minLength(3),
-    Validators.maxLength(100),
-    Validators.required,
-  ]);
-  author_name = new FormControl('', [
-    Validators.minLength(3),
-    Validators.maxLength(100),
-    Validators.required,
-  ]);
-  text = new FormControl('', [
-    Validators.minLength(10),
-    Validators.maxLength(2000000),
-    Validators.required,
-  ]);
 
   constructor(
     private bookService: BookService,
@@ -64,19 +47,4 @@ export class BookCreateComponent implements OnInit {
     this.router.navigate([`category/${this.id_cat}/books`]);
   }
 
-  getErrorMessage() {
-    if (this.title.invalid) {
-      return 'O campo TÍTULO precisa conter entre 3 e 100 caracteres!';
-    }
-
-    if (this.author_name.invalid) {
-      return 'O campo NOME DO AUTOR precisa conter entre 3 e 100 caracteres!';
-    }
-
-    if (this.text.invalid) {
-      return 'O campo TEXTO precisa conter entre 10 e 2.000.000 caracteres!';
-    }
-
-    return false;
-  }
 }

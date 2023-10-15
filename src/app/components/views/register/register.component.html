@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+  <h1>CADASTRO</h1>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>USUÁRIO: </mat-label>
+    <input matInput type="text" name="userName" [(ngModel)]="user.name" placeholder="usuario01@gmail.com"  minlength="5" maxlength="40" required #userName="ngModel">
+      <mat-error *ngIf="!userName.valid">
+        O campo USUÁRIO precisa conter entre 5 e 40 caracteres!
+      </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>SENHA: </mat-label>
+    <input class="input-pass" matInput [type]="showPassword ? 'text' : 'password'" name="password" [(ngModel)]="user.password" placeholder="Insira a senha para cadastro" minlength="6" maxlength="12" required #password="ngModel">
+    <mat-error *ngIf="!password.valid">
+      O campo SENHA precisa conter entre 6 e 12 caracteres!
+    </mat-error>
+    <mat-icon (click)="togglePasswordVisibility()" matSuffix>visibility</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>Tipo de Usuário</mat-label>
+        <mat-select name="userRole" [(ngModel)]="user.userRole" required #userRole="ngModel">
+          <mat-option value="user">Comum</mat-option>
+          <mat-option value="root">Administrador</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!userRole.valid">
+          O tipo de USUÁRIO é obrigatório.
+        </mat-error>
+</mat-form-field>
+
+
+  <div class="buttons">
+    <button type="submit" [disabled]="!registerForm.valid" class="button-add mat-elevation-z8" mat-stroked-button color="primary">Cadastrar<i class="material-icons">person</i></button>
+    <button  class="button-add mat-elevation-z8 back-button" mat-stroked-button color="primary" (click)="cancel()">
+      <mat-icon>keyboard_return</mat-icon>
+    </button>
+  </div>
+</form>

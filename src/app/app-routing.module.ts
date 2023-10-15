@@ -5,6 +5,7 @@ import { HomeComponent } from './components/views/home/home/home.component';
 import { CategoryModule } from './components/views/category/category.module';
 import { LoginComponent } from './components/views/login/login.component';
 import { AuthGuard } from './components/guards/auth.guard';
+import { RegisterComponent } from './components/views/register/register.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
       loadChildren: () => import('./components/views/book/book.module').then(m => m.BookModule),
       canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '', component: HomeComponent }
 ];
 

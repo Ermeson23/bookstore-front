@@ -1,24 +1,29 @@
-<form>
+<form #form="ngForm">
   <h1>LOGIN</h1>
 
   <mat-form-field class="form" appearance="fill">
     <mat-label>USUÁRIO: </mat-label>
-    <input matInput type="text" name="user" [formControl]="userName" [(ngModel)]="_user.name" placeholder="usuario01@gmail.com">
-    <mat-error *ngIf="userName.invalid">
-      {{ getErrorMessage() }}
+    <input matInput type="text" name="user" [(ngModel)]="_user.name" placeholder="usuario01@gmail.com" #user="ngModel" minlength="5" maxlength="40" required>
+    <mat-error *ngIf="user.invalid">
+      O campo USUÁRIO precisa conter entre 5 e 40 caracteres!
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="form" appearance="fill">
     <mat-label>SENHA: </mat-label>
-    <input class="input-pass" matInput [type]="showPassword ? 'text' : 'password'" name="password" [formControl]="passUser" [(ngModel)]="_user.password" placeholder="Insira a senha cadastrada">
+    <input class="input-pass" matInput [type]="showPassword ? 'text' : 'password'" name="password"
+    [(ngModel)]="_user.password" placeholder="Insira a senha cadastrada" #password="ngModel" minlength="6" maxlength="12" required>
     <mat-icon (click)="togglePasswordVisibility()" matSuffix>visibility</mat-icon>
-    <mat-error *ngIf="passUser.invalid">
-      {{ getErrorMessage() }}
+    <mat-error *ngIf="password.invalid">
+      O campo SENHA precisa conter entre 6 e 12 caracteres!
     </mat-error>
   </mat-form-field>
 
   <div class="buttons">
-    <button (click)="login()" [disabled]="getErrorMessage()" class="button-add mat-elevation-z8" mat-stroked-button color="primary">Login <i class="material-icons">send</i></button>
+    <button (click)="login()" [disabled]="!form.valid" class="button-add mat-elevation-z8" mat-stroked-button
+      color="primary">Login <i class="material-icons">send</i></button>
+
+    <button routerLink="/register" class="button-add mat-elevation-z8" mat-stroked-button color="primary">Cadastrar <i
+        class="material-icons">person</i></button>
   </div>
 </form>

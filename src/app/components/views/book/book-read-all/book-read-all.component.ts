@@ -37,4 +37,8 @@ export class BookReadAllComponent implements OnInit {
       console.log(this.books)
     });
   }
+
+  cancel() {
+    this.router.navigate(['category']);
+  }
 }
