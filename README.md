@@ -1,6 +1,6 @@
 # Front-End em Angular para um Sistema de Biblioteca
 
-## 💻 Tecnologies
+## 💻 Tecnologias
 
 - Angular v14
 - Angular Material
