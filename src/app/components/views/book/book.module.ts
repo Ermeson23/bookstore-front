@@ -10,6 +10,7 @@ import { BookUpdateComponent } from './book-update/book-update.component';
 import { BookDeleteComponent } from './book-delete/book-delete.component';
 import { BookReadComponent } from './book-read/book-read.component';
 import { BookRoutingModule } from "./book.routing.module";
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BookRoutingModule } from "./book.routing.module";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BookRoutingModule
+    BookRoutingModule,
+    MatPaginatorModule
   ],
   exports: [],
   declarations: [

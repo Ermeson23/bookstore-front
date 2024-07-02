@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Book } from 'src/app/components/model/book';
@@ -16,6 +17,10 @@ export class BookReadAllComponent implements OnInit {
 
   books: Book[] = [];
 
+  page: number = 0;
+  size: number = 10;
+  totalElements: number = 0;
+
   constructor(
     private bookService: BookService,
     private route: ActivatedRoute,
@@ -24,18 +29,27 @@ export class BookReadAllComponent implements OnInit {
 
   ngOnInit() {
     this.id_cat = this.route.snapshot.paramMap.get('id_cat')!;
-    this.loadAll();
+    this.loadAll(this.page, this.size);
   }
 
   navigateToBookCreate() {
     this.router.navigate([`category/${this.id_cat}/books/create`]);
   }
 
-  loadAll(): void {
-    this.bookService.loadAllByCategory(this.id_cat).subscribe((response) => {
-      this.books = response
+  loadAll(page: number, size: number): void {
+    this.bookService.loadAllByCategory(this.id_cat, page, size).subscribe((response) => {
+      this.books = response.content;
+      this.totalElements = response.totalElements;
+      this.page = response.number;
+      this.size = response.size;
       console.log(this.books)
     });
+  }
+
+  onPageChange(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 10 }): void {
+    this.page = pageEvent.pageIndex;
+    this.size = pageEvent.pageSize;
+    this.loadAll(this.page, this.size);
   }
 
   cancel() {

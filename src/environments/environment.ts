@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://bookstore-back.up.railway.app'
+  baseUrl: 'http://localhost:8080'
 };
 
 /*

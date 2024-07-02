@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, first } from 'rxjs';
 
 import { Book } from '../../model/book';
 import { environment } from 'src/environments/environment';
+import { BookPage } from '../../model/book-page';
 
 @Injectable({
   providedIn: 'root',
@@ -14,9 +15,14 @@ export class BookService {
 
   constructor(private httpClient: HttpClient, private snackBar: MatSnackBar) {}
 
-  loadAllByCategory(id_cat: string): Observable<Book[]> {
-    const url = `${this.baseUrl}/books?category=${id_cat}`;
-    return this.httpClient.get<Book[]>(url).pipe(first());
+  loadAllByCategory(id_cat: string, page: number = 0, size: number = 10): Observable<BookPage> {
+    const params = new HttpParams()
+      .set('category', id_cat)
+      .set('page', page.toString())
+      .set('size', size.toString());
+    
+    const url = `${this.baseUrl}/books`;
+    return this.httpClient.get<BookPage>(url, { params }).pipe(first());
   }
 
   loadById(id: string): Observable<Book> {

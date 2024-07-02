@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, first } from 'rxjs';
 
 import { Category } from '../../model/category';
 import { environment } from 'src/environments/environment';
+import { CategoryPage } from '../../model/category-page';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,13 @@ export class CategoryService {
     private matSnackBar: MatSnackBar
     ) { }
 
-  loadAll(): Observable<Category[]> {
-    const url = `${this.baseUrl}/category`;
-    return this.httpClient.get<Category[]>(url).pipe(first());
+  loadAll(page: number = 0, size: number = 10): Observable<CategoryPage> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+
+    const url = `${this.baseUrl}/category/paginated`;
+    return this.httpClient.get<CategoryPage>(url, {params}).pipe(first());
   }
 
   loadById(id: string): Observable<Category> {

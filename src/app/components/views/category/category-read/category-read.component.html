@@ -1,6 +1,6 @@
 <div class="content">
   <div class="title">
-    <h1>Categoria</h1>
+    <h1>CATEGORIA</h1>
   </div>
 
   <button class="button-add mat-elevation-z8" mat-stroked-button color="warn" (click)="navigateToCategoryCreate()">NOVA CATEGORIA</button>
@@ -49,4 +49,13 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
+
+  <mat-paginator
+    class="custom-paginator"
+    showFirstLastButtons
+    [length]="totalElements"
+    [pageSize]="size"
+    [pageSizeOptions]="[5, 10, 15]"
+    (page)="onChange($event)">
+  </mat-paginator>
 </div>

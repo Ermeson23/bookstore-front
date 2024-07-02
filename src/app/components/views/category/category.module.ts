@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppMaterialModule } from "src/app/shared/app-material/app-material.module";
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { CategoryCreateComponent } from "./category-create/category-create.component";
 import { CategoryReadComponent } from "./category-read/category-read.component";
 import { CategoryDeleteComponent } from "./category-delete/category-delete.component";
@@ -16,6 +17,7 @@ import { CategoryRoutingModule } from "./category.routing.module";
     AppMaterialModule,
     FormsModule,
     HttpClientModule,
+    MatPaginatorModule,
     ReactiveFormsModule,
     CategoryRoutingModule
   ],

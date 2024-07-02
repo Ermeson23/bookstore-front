@@ -48,6 +48,15 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
 
+  <mat-paginator
+    class="custom-paginator"
+    showFirstLastButtons
+    [length]="totalElements"
+    [pageSize]="size"
+    [pageSizeOptions]="[5, 10, 15]"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
   <button  class="button-add mat-elevation-z8 back-button" mat-stroked-button color="primary" (click)="cancel()">
     <mat-icon>keyboard_return</mat-icon>
   </button>

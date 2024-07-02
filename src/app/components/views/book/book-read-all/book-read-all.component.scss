@@ -16,7 +16,6 @@
 
 .button-add {
   margin-bottom: 1rem;
-  margin-left: 5%;
 }
 
 .books {
@@ -32,8 +31,12 @@
 .mat-table {
   overflow: auto;
   max-height: 600px;
-  width: 90%;
+  width: 100%;
   margin: auto
+}
+
+.mat-paginator {
+  margin-top: 1rem;
 }
 
 .action-column-header {
@@ -49,6 +52,6 @@
 }
 
 .back-button {
-  top: 1rem;
+  margin: 1rem 0;
   width: 10%
 }
