@@ -28,7 +28,7 @@ Página Inicial - Desktop
 Página Inicial - Mobile
 
 <p align="center">
-  <img src="./src/assets/img/mobile-screenshot-home.png" alt="Página Inicial - Visualização para Smartphone" width="100%">
+  <img src="./src/assets/img/mobile-screenshot-home.png" alt="Página Inicial - Visualização para Smartphone" width="30%">
 </p>
 
 Página de Login - Desktop
@@ -40,7 +40,7 @@ Página de Login - Desktop
 Página de Login - Mobile
 
 <p align="center">
-  <img src="./src/assets/img/mobile-screenshot-login.png" alt="Página de Login - Visualização para Smartphone" width="100%">
+  <img src="./src/assets/img/mobile-screenshot-login.png" alt="Página de Login - Visualização para Smartphone" width="30%">
 </p>
 
 Página de Cadastro - Desktop
@@ -52,7 +52,7 @@ Página de Cadastro - Desktop
 Página de Cadastro - Mobile
 
 <p align="center">
-  <img src="./src/assets/img/mobile-screenshot-register.png" alt="Página de Cadastro - Visualização para Smartphone" width="100%">
+  <img src="./src/assets/img/mobile-screenshot-register.png" alt="Página de Cadastro - Visualização para Smartphone" width="30%">
 </p>
 
 Página de Categorias com Paginação
@@ -76,7 +76,7 @@ Página de Livros com Paginação - Desktop
 Página de Livros com Paginação - Mobile
 
 <p align="center">
-  <img src="./src/assets/img/mobile-screenshot--view-book-pagination.png" alt="Página de Livros com Paginação - Visualização para Smartphone" width="100%">
+  <img src="./src/assets/img/mobile-screenshot--view-book-pagination.png" alt="Página de Livros com Paginação - Visualização para Smartphone" width="30%">
 </p>
 
 Página para Exemplificar a Leitura do Livro - Desktop
@@ -88,7 +88,7 @@ Página para Exemplificar a Leitura do Livro - Desktop
 Página para Exemplificar a Leitura do Livro - Mobile
 
 <p align="center">
-  <img src="./src/assets/img/screenshot-book-view.png" alt="Página de Livros com Paginação - Visualização para Smartphone" width="100%">
+  <img src="./src/assets/img/mobile-screenshot-book-view.png" alt="Página de Livros com Paginação - Visualização para Smartphone" width="30%">
 </p>
 
 ## ❗️Executando o código localmente
