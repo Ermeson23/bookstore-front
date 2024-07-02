@@ -13,7 +13,7 @@
     <mat-label>SENHA: </mat-label>
     <input class="input-pass" matInput [type]="showPassword ? 'text' : 'password'" name="password"
     [(ngModel)]="_user.password" placeholder="Insira a senha cadastrada" #password="ngModel" minlength="6" maxlength="12" required>
-    <mat-icon (click)="togglePasswordVisibility()" matSuffix>visibility</mat-icon>
+    <mat-icon (click)="togglePasswordVisibility()" class="visibility-icon" matSuffix>visibility</mat-icon>
     <mat-error *ngIf="password.invalid">
       O campo SENHA precisa conter entre 6 e 12 caracteres!
     </mat-error>
