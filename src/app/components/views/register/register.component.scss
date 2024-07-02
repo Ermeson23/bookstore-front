@@ -36,3 +36,9 @@ button {
 .back-button {
   width: 18%
 }
+
+@media screen and (max-width: 360px) {
+  .button-add {
+    margin-top: 1rem;
+  }
+}

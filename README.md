@@ -1,27 +1,114 @@
-# BookstoreFront
+# Front-End em Angular para um Sistema de Biblioteca
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+## 💻 Tecnologies
 
-## Development server
+- Angular v14
+- Angular Material
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ⌨️ Editor / IDE
 
-## Code scaffolding
+- Visual Studio Code
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades disponíveis
 
-## Build
+- ✅ Componentes do Angular Material
+- ✅ Lista de todas as categorias com paginação
+- ✅ Lista de todos os livros por categoria com paginação
+- ✅ Formulários para criar e atualizar categorias e livros (Relacionamento um para muitos)
+- ✅ Tela de Visualização do Registros (Categorias e Livros)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Capturas de tela
 
-## Running unit tests
+Página Inicial - Desktop
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<p align="center">
+  <img src="./src/assets/img/screenshot-home.png" alt="Página Inicial" width="100%">
+</p>
 
-## Running end-to-end tests
+Página Inicial - Mobile
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<p align="center">
+  <img src="./src/assets/img/mobile-screenshot-home.png" alt="Página Inicial - Visualização para Smartphone" width="100%">
+</p>
 
-## Further help
+Página de Login - Desktop
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="center">
+  <img src="./src/assets/img/screenshot-login.png" alt="Página de Login" width="100%">
+</p>
+
+Página de Login - Mobile
+
+<p align="center">
+  <img src="./src/assets/img/mobile-screenshot-login.png" alt="Página de Login - Visualização para Smartphone" width="100%">
+</p>
+
+Página de Cadastro - Desktop
+
+<p align="center">
+  <img src="./src/assets/img/screenshot-register.png" alt="Página de Cadastro" width="100%">
+</p>
+
+Página de Cadastro - Mobile
+
+<p align="center">
+  <img src="./src/assets/img/mobile-screenshot-register.png" alt="Página de Cadastro - Visualização para Smartphone" width="100%">
+</p>
+
+Página de Categorias com Paginação
+
+<p align="center">
+  <img src="./src/assets/img/screenshot--view-category-pagination.png" alt="Página de Categorias com Paginação" width="100%">
+</p>
+
+Página com Um para Muitos (Categoria-Livros)
+
+<p align="center">
+  <img src="./src/assets/img/screenshot-book-by-category.png" alt="Página de livros por categoria" width="100%">
+</p>
+
+Página de Livros com Paginação - Desktop
+
+<p align="center">
+  <img src="./src/assets/img/screenshot--view-book-pagination.png" alt="Página de Livros com Paginação" width="100%">
+</p>
+
+Página de Livros com Paginação - Mobile
+
+<p align="center">
+  <img src="./src/assets/img/mobile-screenshot--view-book-pagination.png" alt="Página de Livros com Paginação - Visualização para Smartphone" width="100%">
+</p>
+
+Página para Exemplificar a Leitura do Livro - Desktop
+
+<p align="center">
+  <img src="./src/assets/img/screenshot-book-view.png" alt="Página de Livros com Paginação" width="100%">
+</p>
+
+Página para Exemplificar a Leitura do Livro - Mobile
+
+<p align="center">
+  <img src="./src/assets/img/screenshot-book-view.png" alt="Página de Livros com Paginação - Visualização para Smartphone" width="100%">
+</p>
+
+## ❗️Executando o código localmente
+
+### Para executar o front-end
+
+Você precisa ter o Node.js / NPM instalado localmente.
+
+1. Instale todas as dependências necessárias:
+
+```
+npm install
+```
+
+2. Execute o projeto:
+
+```
+npm run start
+```
+
+Este comando executará o projeto Angular com um proxy para o servidor Java, sem exigir CORS.
+
+Abra seu navegador e acesse **http://localhost:4200** (porta padrão do Angular).

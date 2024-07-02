@@ -32,3 +32,9 @@ button {
   padding-right: 2rem;
   padding-left: 2rem;
 }
+
+@media screen and (max-width: 360px) {
+  .button-add {
+    margin-top: 1rem;
+  }
+}
