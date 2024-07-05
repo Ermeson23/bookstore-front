@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import * as CryptoJS from 'crypto-js';
+import CryptoES from 'crypto-es';
 
 import { User } from '../../model/user';
 import { UserService } from './user.service';
@@ -38,7 +38,7 @@ export class AuthService {
 
     if (registeredUser) {
       // Criptografe a senha fornecida pelo usuário
-      const inputPassword = CryptoJS.SHA256(user.password!).toString();
+      const inputPassword = CryptoES.SHA256(user.password!).toString();
 
       if (inputPassword === registeredUser.password) {
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as CryptoJS from 'crypto-js';
+import CryptoES from 'crypto-es';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class UserService {
 
     if (!userExists) {
       // Criptografar a senha antes de armazená-la
-      const hashedPassword = CryptoJS.SHA256(password).toString();
+      const hashedPassword = CryptoES.SHA256(password).toString();
 
       this.users.push({ email, password: hashedPassword, userRole });
       return true;
