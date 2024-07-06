@@ -17,7 +17,13 @@
 - ✅ Formulários para criar e atualizar categorias e livros (Relacionamento um para muitos)
 - ✅ Tela de Visualização do Registros (Categorias e Livros)
 
-## Capturas de tela
+## Captura das Métricas da Aplicação Fornecidas pelo LightHouse
+
+<p align="center">
+  <img src="./src/assets/img/lighthouse-screenshot.png" alt="Captura de Tela com a Análise das Métricas da Aplicação com o LightHouse" width="30%">
+</p>
+
+## Capturas de Telas da Aplicação
 
 Página Inicial - Desktop
 
