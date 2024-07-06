@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bookstore-front-ochre.vercel.app/sitemap.xml
